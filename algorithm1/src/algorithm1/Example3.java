@@ -10,6 +10,12 @@ public class Example3 {
 			this.value = value;
 			this.next = next;
 		}
+
+		public void printAll() {
+			System.out.printf("%d ", this.value);
+			if(this.next != null) next.printAll();
+		}
+
 	}
 
 	public static void main(String[] args) {
@@ -22,15 +28,18 @@ public class Example3 {
 		 * 마지막으로 root가 가리키고 있는 것은 10이다. 
 		 * 그래서 10부터 출력되는 것이다.
 		 */
+
 		for(int i = 1; i <= 10; ++i)
 			root = new Node(i, root);
 
+		/* 반복문을 사용한 value 출력
 		Node n = root;
-
 		while(n != null) {
 			System.out.print(n.value + " ");
 			n = n.next;
-		}
+		}*/
+
+		root.printAll(); // 재귀 호출 
 
 	}
 
