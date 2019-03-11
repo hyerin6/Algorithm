@@ -17,10 +17,10 @@ class Node{
 	}
 
 	public boolean contains(int value) {
-		if(this.value == value) 
+		if(this.value == value) // 현재 노드인 경우
 			return true;
 
-		for(Node t : this.children)
+		for(Node t : this.children) 
 			if(t.contains(value)) return true;
 
 		return false;

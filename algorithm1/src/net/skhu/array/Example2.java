@@ -8,10 +8,20 @@ public class Example2 {
 	}
 
 	static void remove(int[] a, int index) {
+		/* 반복문으로 구현
 		for(int i = index; i < a.length-1; ++i) 
 			a[i] = a[i+1];
 
 		a[a.length-1] = 0;
+		 */
+
+		// 재귀 호출 
+		if (index == a.length - 1) {
+			a[index] = 0;
+			return;
+		}
+		a[index] = a[index + 1];
+		remove(a, index + 1);
 	}
 
 	public static void main(String[] args) {
