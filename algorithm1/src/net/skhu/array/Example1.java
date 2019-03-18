@@ -9,12 +9,12 @@ public class Example1 {
 
 	static void insert(int[] a, int index, int value) {
 		/* 반복문으로 구현 
-		 * 맨뒤에 있는 숫자부터 이동시켜야 하기 때문에 insert for roop를 뒤에서 부터 시작해서 돌려야한다. 
-		for(int i = index-1; i > index; --i) 
+		 * 맨뒤에 있는 숫자부터 이동시켜야 하기 때문에 insert for loop를 뒤에서 부터 시작해서 돌려야한다. 
+		for(int i = a.length-1; i > index; --i) 
 			a[i] = a[i-1];
 
 		a[index] = value;
-		*/
+		 */
 
 		// 재귀호출 
 		if(index >= a.length) return; // 재귀호출 종료 조건 구현
