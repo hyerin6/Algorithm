@@ -18,8 +18,6 @@ public class Exclusive_OR {
 		return result;
 	}
 
-
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] a = {2, 1, 5, 75, 75, 53, 53, 1, 5, 75, 75, 2, 2};
