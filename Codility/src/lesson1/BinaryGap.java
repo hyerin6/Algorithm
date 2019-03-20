@@ -5,7 +5,7 @@ public class BinaryGap {
 	static int solution(int n) {
 		int max = 0, num = 0, count = 0, result = 0;
 
-		while(n > 0) {
+		while(n > 1) {
 			// 이진수로 변환
 			num = n % 2;
 			if(num == 1) { // 1을 만나면 count를 시작하고 max를 다시 0으로 초기화한다. 

@@ -2,7 +2,7 @@ package sort.merge;
 
 import java.util.Arrays;
 
-public class Example {
+public class Example1 {
 	static void mergeSort(int[] a, int start, int end) {
 		if (start == end) return; // 정렬할 부분의 길이가 1이면 그냥 리턴
 		int mid = (start + end) / 2;
@@ -12,7 +12,9 @@ public class Example {
 	}
 
 	static void merge(int[] a, int start, int mid, int end) {
+		// start, mid, end 파라미터는 인덱스로 받는 것이므로 +1을헤야 진짜 길이를 구할 수 있다. 
 		int length = end - start + 1;   // 병합할 부분의 길이를 구한다.
+
 		int[] temp = new int[length];   // 병합 결과를 저정할 임시 배열을 생성한다.
 		int i = 0;                      // 임시 배열에 대한 인덱스 변수
 		int index1 = start;             // 앞부분(start ~ middle)에 대한 인덱스 변수
