@@ -2,12 +2,12 @@ package lesson1;
 
 public class BinaryGap {
 
-	static int solution(int n) {
+	static int solution(int N) {
 		int max = 0, num = 0, count = 0, result = 0;
 
-		while(n > 1) {
+		while(N > 1) {
 			// 이진수로 변환
-			num = n % 2;
+			num = N % 2;
 			if(num == 1) { // 1을 만나면 count를 시작하고 max를 다시 0으로 초기화한다. 
 				count++;
 				max = 0;
@@ -18,7 +18,7 @@ public class BinaryGap {
 				if(result < max) 
 					result = max;
 			}
-			n /= 2;
+			N /= 2;
 		}
 		// count가 0보다 크면 result를 반환한다.
 		return count > 0 ? result : 0;
@@ -26,10 +26,10 @@ public class BinaryGap {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(solution(5));	 // 101
-		System.out.println(solution(9));	 // 1001
-		System.out.println(solution(529));   // 1000010001 
-		System.out.println(solution(20));    // 10100
+		System.out.println(solution(5));// 101
+		System.out.println(solution(9));// 1001
+		System.out.println(solution(529));// 1000010001 
+		System.out.println(solution(20));// 10100
 
 	}
 
