@@ -16,12 +16,12 @@ public class Example2 {
 		 */
 
 		// 재귀 호출 
-		if (index == a.length - 1) {
+		if (index <= a.length - 1) 
 			a[index] = 0;
-			return;
+		else {
+			a[index] = a[index + 1];
+			remove(a, index + 1);
 		}
-		a[index] = a[index + 1];
-		remove(a, index + 1);
 	}
 
 	public static void main(String[] args) {

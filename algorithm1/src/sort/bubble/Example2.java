@@ -13,13 +13,14 @@ public class Example2 {
 
 	// bubble sort
 	static void bubbleSort(int[] a) {
-		for (int i = a.length - 1; i >= 1; --i) {
+		for(int i = 0; i < a.length-1; ++i) {
 			boolean 완료 = true;
-			for (int j = 0; j < i; ++j) {
-				if (a[j] > a[j + 1]) {
-					swap(a, j, j + 1);
+			for(int j = i+1; j < a.length; ++j) {
+				if(a[j] < a[i]) {
+					swap(a, i, j);
 					완료 = false;
 				}
+
 			}
 			if (완료) break;
 		}

@@ -15,6 +15,7 @@ public class Example7 {
 
 		System.out.printf("%d ", a[i][j]);
 
+		// i와 j는 index이다. 길이는 원소 개수라는 것을 생각해봐야 한다. 
 		if(j < a[i].length-1) 
 			print2(a, i, j+1);			
 		else {

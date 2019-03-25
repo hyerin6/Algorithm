@@ -1,7 +1,7 @@
 package algoQuiz.sort;
 import java.util.Arrays;
-//고급 정렬 엽습 문제 2)
-//String[] 배열 quick sort 구현
+// 고급 정렬 엽습 문제 1)
+// String[] 배열 quick sort 구현
 public class AdvancedSorting2 {
 	static void swap(String[] s, int i, int j) {
 		String temp = s[i];

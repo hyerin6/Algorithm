@@ -19,7 +19,8 @@ public class Example7b {
 		if (j < n - i - 1) System.out.print(" ");
 		else System.out.print("*");
 
-		if (j < n - 1) print2(n, i, j + 1);
+		if (j < n - 1) 
+			print2(n, i, j + 1);
 		else{ 
 			System.out.println(); 
 			print2(n, i + 1, 0); 

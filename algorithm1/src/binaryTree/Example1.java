@@ -1,7 +1,8 @@
 package binaryTree;
 
 import java.util.Random;
-
+// 이진 탐색 트리 : 탐색, 삽입, 삭제 전부 평균 시간 복잡도 o(log n) 
+// (편향이진트리)최악인 전체 노드의 개수가 n개일 때, 모든 노드가 자식을 한 개씩만 가지고 있다면 o(n)
 public class Example1 {
 
 	static class Node {

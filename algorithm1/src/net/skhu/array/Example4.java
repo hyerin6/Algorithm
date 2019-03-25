@@ -22,10 +22,11 @@ public class Example4 {
 		return -1;
 	}
 
+	// search2와 search3의 조건을 살펴보자.
 	static int search2(int[] a, int value) {
 		int start = 0;
 		int end = a.length - 1;
-		while (start <= end) {
+		while (start <= end) { // 반복문 조건
 			int middle = (start + end) / 2;
 			if (a[middle] < value) start = middle + 1;
 			else if (a[middle] > value) end = middle - 1;
@@ -39,9 +40,9 @@ public class Example4 {
 	}
 
 	static int search3(int[] a, int value, int start, int end) {
-		if(start > end) return -1;
-		int middle = (start + end) / 2;
+		if(start > end) return -1; // 종료 조건
 
+		int middle = (start + end) / 2;
 		if(a[middle] < value) start = middle + 1;
 		else if (a[middle] > value) end = middle - 1; 
 		else return middle; 
