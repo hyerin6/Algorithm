@@ -2,7 +2,7 @@ package algoQuiz.sort;
 import java.util.Arrays;
 import java.util.Comparator;
 // 고급 정렬 엽습 문제 2)
-// Person[] 배열 merge sort 구현
+// Person[] 배열 quickSort sort 구현
 
 public class AdvancedSorting3 {
 	static void swap(Object[] a, int i, int j) {
