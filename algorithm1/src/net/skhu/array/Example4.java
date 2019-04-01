@@ -45,7 +45,7 @@ public class Example4 {
 		int middle = (start + end) / 2;
 		if(a[middle] < value) start = middle + 1;
 		else if (a[middle] > value) end = middle - 1; 
-		else return middle; 
+		else return middle; // 작거나 큰게 아니라면 같은 것! middle == value
 		return search3(a, value, start, end);
 	}
 
