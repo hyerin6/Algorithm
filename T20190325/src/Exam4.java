@@ -32,7 +32,7 @@ public class Exam4 {
 		// TODO Auto-generated method stub
 		DD(); System.out.println(); // (4) 출력?
 		EE(); System.out.println(); // (5) 출력?
-		
+
 		// (4) 답 : 3 2 1 
 		// (5) 답 : 3 2 1 
 
