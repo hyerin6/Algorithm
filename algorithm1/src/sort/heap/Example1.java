@@ -11,13 +11,13 @@ public class Example1 {
 		a[j] = temp;
 	}
 
-	static void buildHeap(int[] a) {
+	static void buildHeap(int[] a) { // 주어진 배열을 힙으로 만들기
 		int end = a.length-1;
-		for(int i = (end-1)/2; i >= 0; --i)
+		for(int i = (end-1)/2; i >= 0; --i) 
 			heapify(a, i, end);
 	}
 
-	static void heapify(int[] a, int k, int end) {
+	static void heapify(int[] a, int k, int end) { // 주어진 인덱스 자리 조정
 		int leftChild = 2*k+1, rightChild = 2*k+2;
 		int smaller;
 
@@ -33,11 +33,11 @@ public class Example1 {
 		}
 	}
 
-	static void heapSort(int[] a) {
-		buildHeap(a);
-		for (int end = a.length - 1; end >= 1; --end) {
+	static void heapSort(int[] a) { // 정렬
+		buildHeap(a); // 일단 배열을 힙으로 만들자 
+		for (int end = a.length - 1; end > 0; --end) { // root를 마지막 노드와 비교하며 정렬
 			swap(a, 0, end);
-			heapify(a, 0, end - 1);
+			heapify(a, 0, end - 1); // root와 end를 swap해서 end-1을 마지막으로.. 
 		}
 	}
 
