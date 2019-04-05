@@ -17,6 +17,7 @@ public class Exam9 {
 		int value = a[end];
 		int i = start - 1;
 		for (int j = start; j < end - 1; ++j)
+			// j<end 이면 정렬된다. 끝까지 비교하지 않아 정렬되지 않는 것이다.
 			if (a[j] < value)
 				swap(a, ++i, j);
 
