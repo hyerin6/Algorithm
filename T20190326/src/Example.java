@@ -7,13 +7,13 @@ public class Example {
 		AA(n / 2);
 	}
 
-	static int BB(int n) {
+	static int BB(int n) { 
 		System.out.printf("%d ", n);
 		if (n <= 1) return 1;
 		return n * BB(n / 2);
 	}
 
-	static int CC(int n) {
+	static int CC(int n) { 
 		if (n < 1) return 1;
 		System.out.printf("%d ", n);
 		return n + CC(n - 1);
@@ -79,7 +79,7 @@ public class Example {
 	}
 
 	static void HH(int[] a) {
-		for (int i = a.length - 1; i > 1; --i) {
+		for (int i = a.length - 1; i > 1; --i) { // 버블 정렬이 3번 반복된다. 
 			boolean 완료 = true;
 			for (int j = 0; j < i; ++j) {
 				if (a[j] > a[j + 1]) {
@@ -95,11 +95,11 @@ public class Example {
 		for (int i = 1; i < a.length; ++i) {
 			int value = a[i];
 			int j;
-			for (j = i - 1; j > 0; --j)
+			for (j = i - 1; j > 0; --j) // j >= 0 으로 바꿔야 정렬된다.
 				if (a[j] > value)
 					a[j + 1] = a[j];
 				else break;
-			a[j] = value;
+			a[j] = value; // j + 1 로 바꿔야 정렬된다.
 		}
 	}
 
@@ -142,47 +142,41 @@ public class Example {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AA(9); System.out.println(); // (1) 출력?
+		AA(9); System.out.println(); // (1) 출력? - 9 4 2
 
-		System.out.println(BB(5)); // (2) 출력?
+		System.out.println(BB(5)); // (2) 출력? - 5 2 1 10
 
-		System.out.println(CC(3)); // (3) 출력?
+		System.out.println(CC(3)); // (3) 출력? - 3 2 1 7 
 
-		DD(); System.out.println(); // (4) 출력?
+		DD(); System.out.println(); // (4) 출력? - 1 2 3 
 
-		EE(); System.out.println(); // (5) 출력?
+		EE(); System.out.println(); // (5) 출력? - 1 2 3 3 2 1 
+
 		int[][] f = {{1, 2}, {3, 4}};
 
-		FF(f, 0, 0); System.out.println(); // (6) 출력?
+		FF(f, 0, 0); System.out.println(); // (6) 출력? - 1 3 4 2 4 
 
 		int[] g = {1, 2, 3, 4, 5};
 
-		GG(g, 2, 0, 4); // (7) 출력?
+		GG(g, 2, 0, 4); // (7) 출력? - 2 0 1 
 
 		System.out.println();
 
 		int[] h = {2, 5, 3, 4, 1};
 
-		HH(h); print(h); // (8) 출력?
+		HH(h); print(h); // (8) 출력? - 2 1 3 4 5 
 
 		int[] i = {2, 5, 3, 4, 1};
 
-		II(i); print(i); // (9) 출력?
+		II(i); print(i); // (9) 출력? - 1 5 5 5 5
 
 		int[] j = {2, 5, 3, 4};
 
-		JJ(j, 0, 3); print(j); // (10) 출력?
+		JJ(j, 0, 3); print(j); // (10) 출력? - 2 0 3 0
 
-		System.out.println(KK(5)); // (11) 출력?
+		System.out.println(KK(5)); // (11) 출력? - 8 
 
-		// (12) KK 메소드의 수행 시간?
-
-		// (13) LL 메소드의 수행 시간?
-
-		// (14) AA 메소드의 수행 시간?
-
-		// (15) DD 메소드의 수행 시간?
-
+		// 수행 시간 문제 생략 !
 	}
 
 }
