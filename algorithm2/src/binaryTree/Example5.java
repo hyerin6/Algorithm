@@ -5,6 +5,7 @@ package binaryTree;
  */
 
 public class Example5 {
+
 	static class Node {
 		int value;
 		Node left;
@@ -16,59 +17,76 @@ public class Example5 {
 			this.right = null;
 		}
 
-		public void add(int value) {
-			// 반복문 구현
-		}
-
 		public void print() {
-			if(left != null) left.print();
+			if (left != null) left.print();
 			System.out.printf("%d ", value);
-			if(right != null) right.print();
-		}
-
-		public boolean contains(int value) {
-			// 반복문 구현
-			return false;
+			if (right != null) right.print();
 		}
 
 		public int getLeftMostValue() {
-			if(this.left != null) 
-				return this.left.getLeftMostValue();
+			if (this.left != null) return this.left.getLeftMostValue();
 			return this.value;
 		}
 
 		public void remove(int value, Node parent) {
-			if(value < this.value) { 								// remove하고 싶은 값이 현재 노드 보다 작으면 	
-				if(left != null) left.remove(value, this);			// 왼쪽 서브 트리에서 remove()
-			}else if(value > this.value) {							// remove하고 싶은 값이 현재 노드 보다 크면
-				if(right != null) right.remove(value, this);		// 오른쪽 서브 트리에서 remove()
-			}else { 												// value 값이 this.value와 같은 경우에 이 코드가 실행된다.
-				if (left != null && right != null) {				// this를 삭제해야 한다.
-					int temp = right.getLeftMostValue();			// this.value 다음으로 큰 값을 찾는다. 
-					this.value = temp;								// 그 값을 this.value에 대입한다.
-					right.remove(temp, this);						// 그 값의 노드를 오른쪽 서브트리에서 remove 한다. (재귀 호출)
-				}else {												// this 노드에 적어도 자식이 하나 없는 경우 실행
-					Node child = (left != null) ? left : right;		// left, right 중 null이 아닌 값을 child 변수에 대입, 둘 다 null 이라면 child 변수에 null을 대입
-					if (parent.left == this) parent.left = child;	// this 노드가 parent의 left 자식이라면, parent.left = child;
-					else parent.right = child;						// this 노드가 parent의 right 자식이라면, parent.right = child;
+			if (value < this.value) {
+				if (left != null) left.remove(value, this);
+			} else if (value > this.value) {
+				if (right != null) right.remove(value, this);
+			} else {
+				if (left != null && right != null) {
+					int temp = right.getLeftMostValue();
+					this.value = temp;
+					right.remove(temp, this);
+				} else {
+					Node child = (left != null) ? left : right;
+					if (parent.left == this) parent.left = child;
+					else parent.right = child;
 				}
 			}
 		}
 	}
+
 	static class BinaryTree {
 		Node root;
+
+		public boolean contains(int value) {
+			if (root == null) return false;
+			Node node = root;
+			while (node != null) {
+				if (node.value < value) node = node.left;
+				else if (node.value > value) node = node.right;
+				else return true;
+			}
+			return false;
+		}
+
 		public void add(int value) {
-			if (root != null) root.add(value);
-			else root = new Node(value);
-		}	
+			if(root == null) {
+				root = new Node(value);
+				return;
+			}
+			
+			Node t = root;
+			Node p = null;
+
+			while(t != null) {
+				p = t;
+				if(value == t.value) return;
+				if(value > t.value)
+					t = t.right;
+				else 
+					t = t.left;
+			}
+
+			if(p.value > value) p.left = new Node(value);
+			else p.right = new Node(value);
+			return;
+		}
 
 		public void print() {
 			if (root != null) root.print();
 			System.out.println();
-		}
-
-		public boolean contains(int value) {
-			return root != null && root.contains(value);
 		}
 
 		public void remove(int value) {
@@ -97,7 +115,7 @@ public class Example5 {
 		binaryTree.remove(14);
 		binaryTree.remove(15);
 		binaryTree.remove(5);
-		binaryTree.remove(10);
+		binaryTree.remove(12);
 		System.out.println();
 
 		binaryTree.print();

@@ -1,15 +1,10 @@
 package binaryTree;
 
-/* 연습문제 1) dummy 노드를 활용하여 이진트리 구현
- * 구현#1 예제에서, BinaryTree 클래스의 remove 메소드를 호출할 때마다 
- * dummy 노드를 생성하는 것이 약간 비효율적이다.
- * 이 문제를 개선해 보자. 
- * 
- * BinaryTree가 비어있는 상태일 때 부터, dummy 노드를 한 개 생성하고, 계속 유지하자.
- * dummy 노드의 left 멤버 변수가 root 노드를 가르키도록 하자.
+/* 연습문제 3) 반복문으로 구현
+ * 이진 트리의 add, contains 메소드를, 재귀호출 없이 반복문으로 구현하라.
  */
 
-public class Example3 {
+public class Example6 {
 	static class Node {
 		int value;
 		Node left;
@@ -21,26 +16,10 @@ public class Example3 {
 			this.right = null;
 		}
 
-		public void add(int value) {
-			if (value < this.value) {
-				if (left == null) left = new Node(value);
-				else left.add(value);
-			} else if (value > this.value) {
-				if (right == null) right = new Node(value);
-				else right.add(value);
-			}
-		}
-
 		public void print() {
 			if (left != null) left.print();
 			System.out.printf("%d ", value);
 			if (right != null) right.print();
-		}
-
-		public boolean contains(int value) {
-			if (value < this.value) return left != null && left.contains(value);
-			else if (value > this.value) return right != null && right.contains(value);
-			return true;
 		}
 
 		public int getLeftMostValue() {
@@ -67,30 +46,56 @@ public class Example3 {
 		}
 	}
 
-	// dummy의 left가 root이기 때문에 코드가 바뀐 부분을 잘 체크하자. 
 	static class BinaryTree {
-		Node dummy;
+		Node root;
 
-		public BinaryTree() {
-			dummy = new Node(Integer.MAX_VALUE); 
+		public boolean contains(int value) {
+			if (root == null) return false;
+			Node node = root;
+			while (node != null) {
+				if (node.value < value) node = node.left;
+				else if (node.value > value) node = node.right;
+				else return true;
+			}
+			return false;
 		}
 
 		public void add(int value) {
-			dummy.add(value);
-		}	
+			if (root == null) {
+				root = new Node(value);
+				return;
+			}
+
+			Node node = root;
+			while (true) {
+				if (node.value > value) { // 강의 자료 오타 수정
+					if (node.left == null) {
+						node.left = new Node(value);
+						return;
+					} else
+						node = node.left;
+				}
+				else if (node.value < value) {
+					if (node.right == null) {
+						node.right = new Node(value);
+						return;
+					} else
+						node = node.right;
+				}
+				else return;
+			}
+		}
 
 		public void print() {
-			if (dummy.left != null) dummy.left.print();
+			if (root != null) root.print();
 			System.out.println();
 		}
 
-		public boolean contains(int value) {
-			return dummy.left != null && dummy.left.contains(value);
-		}
-
 		public void remove(int value) {
-			if (dummy.left != null) 
-				dummy.left.remove(value, dummy);
+			Node dummy = new Node(Integer.MAX_VALUE);
+			dummy.left = root;
+			root.remove(value, dummy);
+			if (dummy.left != root) root = dummy.left;
 		}
 	}
 

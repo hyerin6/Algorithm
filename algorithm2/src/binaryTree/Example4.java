@@ -67,6 +67,7 @@ public class Example4 {
 					Node child = (left != null) ? left : right;	// left, right 중 null이 아닌 값을 child 변수에 대입, 둘 다 null 이라면 child 변수에 null을 대입
 					if (parent.left == this) parent.left = child;	// this 노드가 parent의 left 자식이라면, parent.left = child;
 					else parent.right = child;			// this 노드가 parent의 right 자식이라면, parent.right = child;
+				}
 			}
 		}
 	}
