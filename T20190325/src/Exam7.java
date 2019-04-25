@@ -12,12 +12,10 @@ public class Exam7 {
 			System.out.printf("%d ", a[i]);
 		System.out.println();
 	}
-
-	// selectionSort 
+	
 	static void HH(int[] a) {
 		for (int i = a.length - 1; i > 1; --i) 
 			// i >= 0 이어야 정렬된다.
-			// 그래서 앞에 2개가 정렬되지 않는다.
 			for (int j = 0; j < i; ++j) 
 				if (a[j] > a[j + 1]) 
 					swap(a, j, j + 1);

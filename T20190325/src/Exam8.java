@@ -13,7 +13,6 @@ public class Exam8 {
 			int j;
 			for (j = i - 1; j > 0; --j) {
 				// j >= 0 이면 정렬된다.
-				// 0번째까지 비교하지 않아 0번째 값과 마지막 값이 정렬되지 않았다.
 				if (a[j] > value)
 					a[j + 1] = a[j];
 				else break;
