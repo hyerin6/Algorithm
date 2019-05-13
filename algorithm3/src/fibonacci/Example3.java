@@ -1,0 +1,19 @@
+package fibonacci;
+
+// 동적 프로그래밍(2) - 반복문 구현
+public class Example3 {
+
+	static int[] a = new int[100];
+
+	static int fibonacci(int n) {
+		a[1] = a[2] = 1;
+		for (int i = 3; i <= n; ++i)
+			a[i] = a[i - 1] + a[i - 2];
+		return a[n];
+	}
+
+	public static void main(String[] args) {
+		int value = fibonacci(7);
+		System.out.println(value);
+	}
+}
