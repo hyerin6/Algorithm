@@ -1,7 +1,8 @@
 package matrixchain;
 
+// 반복문 구현 
 public class Example4 {
-	
+
 	static class Matrix {
 		int row, col;
 
@@ -16,7 +17,7 @@ public class Example4 {
 	static int 곱셈횟수최소값(Matrix[] a) {
 		최소값저장 = new int[a.length][a.length];
 		for (int distance = 1; distance < a.length; ++distance)
-			for (int start = 0; start < a.length - distance; ++start) { // distance:이전단계의 곱셈 크기
+			for (int start = 0; start < a.length - distance; ++start) { // distance : 이전단계의 곱셈 크기
 				int end = start + distance;
 				최소값저장[start][end] = Integer.MAX_VALUE;
 				for (int middle = start; middle < end; ++middle) {

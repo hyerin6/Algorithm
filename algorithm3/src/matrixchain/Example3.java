@@ -12,8 +12,10 @@ public class Example3 {
 		}
 	}
 
-	static int[][] 최소값저장;
+	static int[][] 최소값저장; // 파라미터(최소값저장[start][end])를 key로 결과 값을 value로 저장
 
+	// 수행시간 복잡도 O(n^2) - 이차원 행렬이기 때문에 O(n^2)이다. 
+	// 즉, 최소값 저장 배열을 채우는 것 (반만 채우는 것이라도 n^2에 비례하는 것)
 	static int 곱셈횟수최소값(Matrix[] a, int start, int end) throws Exception {
 		if (최소값저장 == null) 최소값저장 = new int[a.length][a.length];
 		if (최소값저장[start][end] != 0) return 최소값저장[start][end];

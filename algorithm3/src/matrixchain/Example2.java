@@ -1,6 +1,6 @@
 package matrixchain;
 
-// 중복 확인 
+// 중복 호출 확인 
 public class Example2 {
 
 	static class Matrix {

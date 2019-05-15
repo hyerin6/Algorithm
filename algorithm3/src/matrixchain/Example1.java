@@ -11,13 +11,14 @@ public class Example1 {
 		}
 	}
 
+	// 수행시간 O(n^n)
 	static int 곱셈횟수최소값(Matrix[] a, int start, int end) throws Exception {
-		if (start == end) return 0;
+		if (start == end) return 0; // 행이 하나이기 때문에 종료 
 		int 최소값 = Integer.MAX_VALUE;
 		for (int middle = start; middle < end; ++middle) {
 			int 횟수 = 곱셈횟수최소값(a, start, middle);
 			횟수 += 곱셈횟수최소값(a, middle + 1, end);
-			횟수 += a[start].row * a[middle].col * a[end].col;
+			횟수 += a[start].row * a[middle].col * a[end].col; // 위의 두 재귀호출 결과를 곱한 횟수 
 			if (횟수 < 최소값) 최소값 = 횟수;
 		}
 		return 최소값;
