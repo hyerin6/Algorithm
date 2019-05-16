@@ -2,8 +2,8 @@ package lcs;
 
 public class LCSint1 {
 
-	// 최선의 경우 - 문자열이 동일한 경우 / 최악의 경우 - 두 문자열에 공통 문자가 전혀 없는 경우 
-	// 최선의 경우 수행 시간은 O(N) / 최악의 경우 수행 시간은 O(2^N)
+	// 최선의 경우 - 짧은 문자열이 긴문자열의 앞 부분과 동일한 경우 O(N)
+	// 최악의 경우 - 두 문자열에 공통 문자가 전혀 없는 경우 O(2^N)
 	static int LCS(String s1, String s2) {
 		if (s1.length() == 0 || s2.length() == 0) return 0;
 		if(s1.charAt(0) == s2.charAt(0)) 
