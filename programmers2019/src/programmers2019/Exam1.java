@@ -7,8 +7,10 @@ package programmers2019;
 public class Exam1 {
 	static int solution(int[] s) {
 		int[] 그룹수 = new int[5];
+		
 		for (int 그룹크기 : s) 
 			++그룹수[그룹크기];
+		
 		/* 아래 코드는 위 반복문과 같은 코드이다.
 		for(int i = 0; i < s.length; ++i) 
 				++그룹수[s[i]];

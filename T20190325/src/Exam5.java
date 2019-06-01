@@ -2,8 +2,11 @@
 public class Exam5 {
 
 	static void FF(int[][] a, int r, int c) {
+		System.out.println();
+		System.out.printf("%d %d", r, c);
 		if (r >= a.length) return;
 		if (c >= a[r].length) return;
+		System.out.println();
 		System.out.printf("%d ", a[r][c]);
 		FF(a, r, c + 1);
 		FF(a, r + 1, c);
