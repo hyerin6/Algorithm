@@ -1,4 +1,4 @@
-package loop;
+package training;
 import java.util.Scanner;
 
 // 첫째 줄에는 별 1개 ... 오른쪽을 기준으로 정렬하여 출력

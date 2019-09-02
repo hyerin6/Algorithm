@@ -1,4 +1,4 @@
-package course;
+package training;
 import java.util.Scanner;
 
 /* 백준 1463 - 1로 만들기

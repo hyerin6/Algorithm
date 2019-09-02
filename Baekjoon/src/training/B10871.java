@@ -1,4 +1,4 @@
-package level4;
+package training;
 import java.util.Scanner; 
 
 public class B10871 {

@@ -1,4 +1,4 @@
-package course;
+package training;
 
 import java.util.Deque;
 

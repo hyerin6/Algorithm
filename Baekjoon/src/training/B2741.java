@@ -1,4 +1,4 @@
-package loop;
+package training;
 import java.util.Scanner;
 
 // 자연수 N이 주어졌을 떄, 1부터 N까지 한 줄에 하나씩 출력

@@ -1,4 +1,4 @@
-package level4;
+package training;
 import java.util.Scanner; 
 
 // if - else if 만 사용해보자. 

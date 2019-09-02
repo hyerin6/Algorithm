@@ -1,4 +1,4 @@
-package course;
+package training;
 import java.util.Scanner;
 
 // 1003 피보나치 함수

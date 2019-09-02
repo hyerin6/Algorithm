@@ -1,4 +1,4 @@
-package loop;
+package training;
 import java.util.Scanner;
 
 // N을 입력받은 뒤, 구구단 N단을 출력

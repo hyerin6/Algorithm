@@ -1,4 +1,4 @@
-package loop;
+package training;
 import java.util.Scanner;
 
 public class B1924 {
