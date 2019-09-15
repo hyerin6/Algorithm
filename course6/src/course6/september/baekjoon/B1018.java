@@ -3,7 +3,7 @@ package course6.september.baekjoon;
 import java.util.Scanner;
 
 // 백준 1018번 체스판 다시 칠하기 
-public class b1018 {
+public class B1018 {
 
 	static String[] Wresult = {"WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW"};
 	static String[] Bresult = {"BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB"};
