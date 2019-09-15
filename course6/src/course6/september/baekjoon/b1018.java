@@ -9,17 +9,29 @@ public class b1018 {
 	static String[] Bresult = {"BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB","BWBWBWBW","WBWBWBWB"};
 
 
-	public static int W(char[][] A, int row, int col) {
+	public static int W(String[] A, int i, int j) {
 		int result = 0;
 
-
+		for(int a = i; a < i+8; a++) {
+			for(int b = j; b < j+8 ; b++) {
+				if(A[a].charAt(b) == Bresult[a-i].charAt(b-j)) {
+					result++;
+				}
+			}
+		}
 		return result;
 	}
 
-	public static int B(char[][] A, int row, int col) {
+	public static int B(String[] A,  int i, int j) {
 		int result = 0;
 
-
+		for(int a = i; a < i+8; a++) {
+			for(int b = j; b < j+8 ; b++ ) {
+				if(A[a].charAt(b) == Wresult[a-i].charAt(b-j)) {
+					result++;
+				}
+			}
+		}
 		return result;
 	}
 
@@ -31,7 +43,7 @@ public class b1018 {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int N = scan.nextInt();
-		int M = scan.nextInt(); 
+		int M = scan.nextInt(); String s = scan.nextLine();
 
 
 		String[] NM = new String [N];
@@ -42,7 +54,13 @@ public class b1018 {
 		// 최대값
 		int result = 2500;
 
+		for(int i = 0 ; i+7 < N ; ++i) {
+			for(int j = 0 ; j+7 < M; ++j) {
+				result = min(result, W(NM,i,j), B(NM,i,j));
+			}
 
+		}
+		System.out.println(result);
 
 	}
 
