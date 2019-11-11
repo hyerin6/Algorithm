@@ -1,4 +1,4 @@
-package course6.september.baekjoon;
+package course6.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;

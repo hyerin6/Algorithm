@@ -1,5 +1,5 @@
-// 2. 구현
-package course6.september;
+// 2020 KAKAO 코딩테스트
+package course6.kakao;
 /*
  * 인덱스 -> range
  * 
@@ -17,7 +17,7 @@ package course6.september;
  * 012 = 345 -> (0, 3) = (3, 6)
  * 345 = 678 -> (3, 6) = (6, 9)
  */
-public class Algorithm2 {
+public class Algorithm1 {
 
 	// s 길이는 1이상 1000이하
 	public static int solution(String s) {
@@ -65,7 +65,6 @@ public class Algorithm2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		String s = "abcabcabcabcdededededede";
 		System.out.println(solution(s));
 	}

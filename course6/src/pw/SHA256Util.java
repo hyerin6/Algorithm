@@ -27,9 +27,6 @@ public class SHA256Util {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(getEncrypt("pw"));
-		System.out.println(getEncrypt("pw"));
-		System.out.println(getEncrypt("pw"));
-		System.out.println(getEncrypt("pw"));
 	
 	}
 
