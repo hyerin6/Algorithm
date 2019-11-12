@@ -1,4 +1,4 @@
-// 2020 KAKAO 코딩테스트
+// 2020 KAKAO 코딩테스트 문자열 압축 
 package course6.kakao;
 /*
  * 인덱스 -> range

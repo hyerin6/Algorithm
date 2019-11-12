@@ -6,7 +6,7 @@ import java.util.Random;
 public class SHA256Util {
 	public static String getEncrypt(String source) {
 
-        String result = "";
+		String result = "";
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(source.getBytes());
@@ -17,9 +17,7 @@ public class SHA256Util {
             }
             result = sb.toString();
         } catch (NoSuchAlgorithmException e) {
-
         } catch (Exception e) {
-
         }
         return result;
     }
