@@ -12,11 +12,32 @@ public class K번째수 {
 			int end = commands[i][1]; // end index + 1
 			int k = commands[i][2]-1; // k index 
 
-			int temp[] = Arrays.copyOfRange(array, start, end);
-			Arrays.sort(temp); // 어떤 정렬을 써야 좋을까 ?
-			answer[i] = temp[k]; 
+			int[] temp = array.clone();
+			for(int j = start; j < end-1; ++j) { // selection sort 
+				int minIndex = findMin(temp, j, end);
+				swap(temp, j, minIndex);
+			}
+			answer[i] = temp[start+k]; 
 		}
 		return answer;
+	}
+
+	static void swap(int[] a, int i, int j) {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+
+	static int findMin(int[] a, int start, int end) {
+		int minValue = a[start];
+		int minIndex = start;
+		for (int i = start; i < end; ++i) {
+			if (a[i] < minValue) {
+				minValue = a[i];
+				minIndex = i;
+			}
+		}
+		return minIndex;
 	}
 
 	public static void main(String[] args) {
