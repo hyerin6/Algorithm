@@ -49,7 +49,6 @@ public class B2751 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		long start = System.currentTimeMillis();
 		int n = Integer.parseInt(br.readLine());
 
 		int[]a = new int[n];
@@ -57,6 +56,7 @@ public class B2751 {
 			a[i] = Integer.parseInt(br.readLine());
 		}
 
+		long start = System.currentTimeMillis();
 		mergeSort(a, 0, a.length-1);
 		for(int i : a) {
 			System.out.println(i);
