@@ -2,7 +2,7 @@ package programmers.lv2;
 
 import java.util.*;
 
-public class 구멍보트 {
+public class 구명보트 {
 
 	public static int solution(int[] people, int limit) {
 		Arrays.sort(people);
