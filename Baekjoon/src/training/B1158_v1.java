@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class B1158 {
+public class B1158_v1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

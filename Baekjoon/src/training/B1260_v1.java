@@ -3,7 +3,7 @@ package training;
 import java.io.*;
 import java.util.*;
 
-public class B1260 {
+public class B1260_v1 {
 	static HashSet<Integer> 방문한정점 = new HashSet<>();
 
 	public static void DFS(ArrayList<Integer>[] list, int 정점) {

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class B1260_result {
+public class B1260_v2 {
 	private static int N, M, V; 
 	private static int[][] map; 
 	private static boolean[] visit; 
