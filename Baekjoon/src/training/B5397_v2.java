@@ -10,7 +10,6 @@ public class B5397_v2 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
-
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(reader.readLine()); 
 

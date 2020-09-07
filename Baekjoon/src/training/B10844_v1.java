@@ -2,7 +2,7 @@ package training;
 
 import java.util.*;
 
-public class B10844 {
+public class B10844_v1 {
 	static int[][]d;
 
 	public static void main(String[] args) throws Exception{
