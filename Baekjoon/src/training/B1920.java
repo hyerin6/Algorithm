@@ -5,11 +5,10 @@ import java.util.Scanner;
 
 public class B1920 {
 	private static int search(int[] A, int start, int end, int input) {
-		int mid = (start + end )/2;
-		if (mid >= end)
-			return 0;
-
+		int mid = (start + end)/2;
+		if (mid >= end) return 0;
 		if(A[mid] == input) return 1;
+
 		if (A[mid] < input) return search(A, mid+1, end, input);
 		else return search(A, start, mid, input);
 	}
