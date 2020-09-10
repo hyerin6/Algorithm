@@ -1,12 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 public class 실패율 {
 
@@ -64,7 +59,7 @@ public class 실패율 {
 		Solution s = new Solution();
 		int[] arr1 = {2, 1, 2, 6, 2, 4, 3, 3};
 		System.out.println(Arrays.toString(s.solution(5, arr1)));
-		
+
 	}
 
 }
