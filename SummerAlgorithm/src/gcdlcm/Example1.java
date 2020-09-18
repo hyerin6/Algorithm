@@ -4,7 +4,7 @@ public class Example1 {
 
 	// 최대공약수 
 	static long gcd(long a, long b) {
-		// return b ? gcd(b, a%b) : a;
+		// return b!=0 ? gcd(b, a%b) : a;
 
 		while(b!=0) {
 			long t = a%b;
