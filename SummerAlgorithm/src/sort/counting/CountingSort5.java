@@ -9,16 +9,19 @@ public class CountingSort5 {
 		int[] count = new int[maxValue+1]; 
 
 		// maxValue+1 개의 count가 필요함. 
-		for (int i = 0; i < a.length; ++i) 
+		for (int i = 0; i < a.length; ++i) {
 			++count[a[i]]; 
+		}
 
 		// a[i] 값 count 증가 
 		// 위에서 계산한 count를 사용하여 값들을 a 배열에 저장함. 즉 정렬함. 
 		int index = 0; 
 
-		for (int i = 0; i < count.length; ++i) 
-			for (int j = 0; j < count[i]; ++j) 
+		for (int i = 0; i < count.length; ++i) {
+			for (int j = 0; j < count[i]; ++j) {
 				a[index++] = i; 
+			}
+		}
 	} 
 
 	public static void main(String[] args) {
