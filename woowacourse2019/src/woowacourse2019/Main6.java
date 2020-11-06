@@ -6,14 +6,16 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Queue;
 
 public class Main6 {
 
 	static class State {
-		String time;
-		String state;
+		private String time;
+		private String state;
 
 		public State(String time, String state) {
 			this.time = time;
@@ -33,18 +35,19 @@ public class Main6 {
 			StringBuilder sb = new StringBuilder();
 			SimpleDateFormat f = new SimpleDateFormat("HH:mm:ss");
 
+			Queue<String> logBucket = new LinkedList<>();
+			for(String s : logs) logBucket.add(s);
 
+			Map<String, State> map = new HashMap<>();
 
-			//				Date d1 = f.parse(preLogSplit[2]);
-			//				Date d2 = f.parse(logSplit[2]);
-			//				long diff = d2.getTime() - d1.getTime();
-			//
-			//				if(diff/1000 >= 60 && logSplit[1].equals("request")) {
-			//					sb.append(preLogSplit[0] + " ");
+			// 0: user, 1: state, 2: time  
+			String[] preLog = logBucket.poll().split(" ");
 
+			String[] curLog = logBucket.poll().split(" ");
+			Date pre = f.parse(preLog[2]);
+			Date cur = f.parse(curLog[2]);
+			long diff = ((cur.getTime()-pre.getTime())/1000);
 
-
-			answer = sb.toString().split(" ");
 			return answer;
 		}
 	}
