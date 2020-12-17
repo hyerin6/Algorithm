@@ -14,6 +14,8 @@ public class 멀쩡한_사각형 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(new Solution().solution(8, 12));
+		System.out.println(new Solution().solution(3, 4));
+
 	}
 
 }

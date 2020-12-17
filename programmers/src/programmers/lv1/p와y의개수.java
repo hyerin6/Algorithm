@@ -4,13 +4,14 @@ public class p와y의개수 {
 
 	private static boolean solution(String word) {
 		int cnt = 0;
+		word = word.toUpperCase();
 
 		for(String s : word.split("")) {
-			if("y".equals(s.toLowerCase())) cnt++;
-			else if("p".equals(s.toLowerCase())) cnt--;
+			if("Y".equals(s)) cnt++;
+			else if("P".equals(s)) cnt--;
 		}
 
-		return cnt == 0 ? true : false;
+		return cnt == 0;
 	}
 
 	public static void main(String[] args) {

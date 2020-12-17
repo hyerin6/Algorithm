@@ -2,8 +2,6 @@ package programmers.lv1;
 
 public class ThreeBaseFlip {
 
-
-
 	static class Solution {
 		public static int solution(int n) {
 			int answer = 0;
