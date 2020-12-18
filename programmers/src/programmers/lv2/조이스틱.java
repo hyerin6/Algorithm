@@ -27,9 +27,9 @@ public class 조이스틱 {
 
 		if(up > down) {
 			return down;
-		} else {
-			return up;
 		}
+
+		return up;
 	}
 
 	private static int[] findPos(boolean[] visit, String name, int idx) {
