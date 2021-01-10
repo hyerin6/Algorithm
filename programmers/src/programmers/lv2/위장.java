@@ -32,6 +32,7 @@ public class 위장 {
 			{"green_turban", "headgear"}};
 
 		System.out.println(solution(s));
+
 	}
 
 }
