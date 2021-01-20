@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class B1260_v1 {
+	
+	// DFS를 재귀호출로 구현한 경우, Stack 객체 대신 Stack Segment를 사용하며 탐색한다.  
 	static HashSet<Integer> 방문한정점 = new HashSet<>();
 
 	public static void DFS(ArrayList<Integer>[] list, int 정점) {
