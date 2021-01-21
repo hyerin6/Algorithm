@@ -34,14 +34,17 @@ public class B10816 {
 
 		while (start < end) {
 			mid = (start + end) / 2;
-			if (sangGeunArr[mid] > key)
+			if (sangGeunArr[mid] > key) {
 				end = mid;
-			else
+			} else {
 				start = mid + 1;
+			}
 		}
 
-		if (sangGeunArr[end] == key)
+		if (sangGeunArr[end] == key) {
 			end++;    // 상한값이 배열 크기를 넘어설 때
+		}
+
 		return end;
 	}
 
