@@ -6,13 +6,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class B2075_v2 {
-
-	public static void swap(int[] a, int i, int j) {
-		int temp = a[i];
-		a[i] = a[j];
-		a[j] = temp;
-	}
-
 	/*
 	src 배열의 값들을 정렬하여, dest 배열에 저장함
 	signed : 부호를 고려하여 정렬함.
