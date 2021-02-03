@@ -1,4 +1,4 @@
-package training;
+package platinum4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,13 +11,13 @@ public class B2983 {
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(reader.readLine());
-		int N = Integer.parseInt(st.nextToken()); 		
-		int K = Integer.parseInt(st.nextToken()); 
-		
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+
 		String cmd = reader.readLine();
 		for (int i = 0; i < N; ++i) {
 			st = new StringTokenizer(reader.readLine());
-			long x = Long.parseLong(st.nextToken()); 
+			long x = Long.parseLong(st.nextToken());
 			long y = Long.parseLong(st.nextToken());
 			System.out.println("(x,y) = " + "(" + x + "," + y + ")");
 		}

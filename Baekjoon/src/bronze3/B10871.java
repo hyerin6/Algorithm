@@ -1,5 +1,6 @@
-package training;
-import java.util.Scanner; 
+package bronze3;
+
+import java.util.Scanner;
 
 public class B10871 {
 
@@ -12,9 +13,9 @@ public class B10871 {
 
 		int[] arr = new int[n];
 
-		for(int i = 0; i < arr.length; ++i) {
+		for (int i = 0; i < arr.length; ++i) {
 			arr[i] = scan.nextInt();
-			if(arr[i] < max) 
+			if (arr[i] < max)
 				System.out.printf("%d ", arr[i]);
 		}
 

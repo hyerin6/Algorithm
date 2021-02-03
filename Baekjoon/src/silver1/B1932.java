@@ -1,4 +1,4 @@
-package training;
+package silver1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

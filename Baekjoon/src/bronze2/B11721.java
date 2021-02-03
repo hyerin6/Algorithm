@@ -1,4 +1,5 @@
-package training;
+package bronze2;
+
 import java.util.Scanner;
 
 /*
@@ -15,7 +16,7 @@ public class B11721 {
 		String input = scan.next();
 
 		for (int i = 1; i <= input.length(); ++i) {
-			System.out.print(input.charAt(i-1));
+			System.out.print(input.charAt(i - 1));
 			if (i % 10 == 0) {
 				System.out.println();
 			}

@@ -1,4 +1,5 @@
-package training;
+package bronze3;
+
 import java.util.Scanner;
 
 // 자연수 N이 주어졌을 때, N부터 1까지 한 줄에 하나씩 출력
@@ -11,8 +12,8 @@ public class B2742 {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
 
-		if(n <= 100000) {
-			for(int i = n; i > 0; --i)
+		if (n <= 100000) {
+			for (int i = n; i > 0; --i)
 				System.out.println(i);
 		}
 
