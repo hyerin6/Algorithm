@@ -23,4 +23,4 @@
 - [platinum4](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/platinum4)          
 - [platinum5](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/platinum5)                
 
-백준 level 및 문제 참고 : <https://solved.ac/>        
+백준 level 및 문제 참고 : https://solved.ac/profile/hyerin0611    
