@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class B1252 {
 
+	/*
+	이진수 A, B 를 입력받은 후 편의상 A가 B보다 무조건 더 길도록 했다.
+	B의 앞부분에는 A와 길이가 맞게끔 0을 채워주고 합연산을 진행한다.
+	결과가 0일때만 0을 출력하고 나머지 경우에는 1로 시작해야 하므로 이부분만 따로 예외처리
+	 */
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
@@ -54,7 +60,7 @@ public class B1252 {
 				continue;
 			ans += s.charAt(i);
 		}
-		
+
 		System.out.println(ans.equals("") ? 0 : ans);
 	}
 }
