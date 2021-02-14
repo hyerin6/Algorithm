@@ -13,28 +13,21 @@ public class B13301 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		int N = Integer.parseInt(br.readLine());
-		int result = 0;
 
-		if (N == 1) {
-			result = 1;
-		} else {
-			int[] arr = new int[N];
-			arr[0] = 1;
-			arr[1] = 1;
+		long[] fibo = new long[3];
+		fibo[0] = 1;
+		fibo[1] = 1;
+		fibo[2] = 1;
 
-			int i = 2;
-			while (i < N) {
-				arr[i] = arr[i - 1] + arr[i - 2];
-				++i;
-			}
-
-			result = arr[N - 1] * 4 + arr[N - 2] * 2;
+		for (int i = 2; i <= N; i++) {
+			fibo[2] = fibo[0] + fibo[1];
+			fibo[0] = fibo[1];
+			fibo[1] = fibo[2];
 		}
 
-		bw.write(result + "\n");
+		bw.write(2 * (fibo[0] + fibo[1]) + "\n");
 		bw.flush();
 		bw.close();
 		br.close();
-
 	}
 }
