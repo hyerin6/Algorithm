@@ -33,15 +33,13 @@ public class B1010 {
 		int T = Integer.parseInt(br.readLine());
 		int[][] site = new int[30][30];
 
-		// 2번 성질 (n == r, r == 0)
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 30; ++i) {
 			site[i][i] = 1;
 			site[i][0] = 1;
 		}
 
-		for (int i = 2; i < 30; i++) {
-			for (int j = 1; j < 30; j++) {
-				// 1번 성질
+		for (int i = 2; i < 30; ++i) {
+			for (int j = 1; j < 30; ++j) {
 				site[i][j] = site[i - 1][j - 1] + site[i - 1][j];
 			}
 		}
