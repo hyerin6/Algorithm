@@ -18,8 +18,8 @@ public class 소수찾기 {
 		boolean[] picked = new boolean[numberSplit.length];
 		makeNumber(numberSplit, picked, sb);
 
-		for(int num : prime){
-			if(isPrime(num))
+		for (int num : prime) {
+			if (isPrime(num))
 				cnt++;
 		}
 
@@ -27,19 +27,20 @@ public class 소수찾기 {
 	}
 
 	public static void makeNumber(String[] numbers, boolean[] picked, StringBuilder sb) {
-		int len = picked.length; 
+		int len = picked.length;
 		boolean finished = true;
-		for(boolean flag : picked) {
-			if(!flag) {
+		for (boolean flag : picked) {
+			if (!flag) {
 				finished = false;
 				break;
 			}
 		}
 
-		if(finished) return;
+		if (finished)
+			return;
 
-		for(int i = 0; i < len; ++i) {
-			if(!picked[i]) {
+		for (int i = 0; i < len; ++i) {
+			if (!picked[i]) {
 				sb.append(numbers[i]);
 				prime.add(Integer.parseInt(sb.toString()));
 				picked[i] = true;
@@ -51,10 +52,10 @@ public class 소수찾기 {
 
 	}
 
-	public static boolean isPrime(int num){
+	public static boolean isPrime(int num) {
 		// 에라토스테네스의 체를 이용
-		for(int i = 2; i <= Math.sqrt(num); i++){
-			for(int j = 2; j * i <= num ; j++){
+		for (int i = 2; i <= Math.sqrt(num); i++) {
+			for (int j = 2; j * i <= num; j++) {
 				NUMBER[j * i] = false;
 			}
 		}
