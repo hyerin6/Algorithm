@@ -26,7 +26,7 @@ public class B10844_v1 {
 				else
 					d[i][j] = (d[i - 1][j - 1] + d[i - 1][j + 1]) % 1000000000;
 
-				System.out.println("test d[" + i + "][" + j + "] = " + d[i][j]);
+				// System.out.println("test d[" + i + "][" + j + "] = " + d[i][j]);
 			}
 		}
 
