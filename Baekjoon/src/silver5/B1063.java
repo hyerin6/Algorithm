@@ -10,16 +10,6 @@ import java.util.List;
 
 public class B1063 {
 
-	/*
-	R : 한 칸 오른쪽으로 : chess[i][j+1]
-	L : 한 칸 왼쪽으로 : chess[i][j-1]
-	B : 한 칸 아래로 : chess[i-1][j]
-	T : 한 칸 위로 : chess[i+1][j]
-	RT : 오른쪽 위 대각선으로 : chess[i-1][j+1]
-	LT : 왼쪽 위 대각선으로 : chess[i-1][j-1]
-	RB : 오른쪽 아래 대각선으로 : chess[i+1][j+1]
-	LB : 왼쪽 아래 대각선으로 : chess[i+1][j-1]
-	 */
 	enum Move {
 		R(0, 1), L(0, -1), B(1, 0), T(-1, 0),
 		RT(-1, 1), LT(-1, -1), RB(1, 1), LB(1, -1);
