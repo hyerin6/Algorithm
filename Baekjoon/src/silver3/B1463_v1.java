@@ -13,19 +13,22 @@ import java.util.Scanner;
  */
 
 // 참고 - https://kgh940525.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B0%B1%EC%A4%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-1463-1%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0TopDownBottomUp-C
-public class B1463 {
+public class B1463_v1 {
 
 	// 재귀호출은 중복 호출이 너무 많다. 동적 프로그래밍으로 구현하라.
 	public static int solution1(int n) {
 		System.out.printf("%d ", n);
-		if (n == 1)
+		if (n == 1) {
 			return 0;
+		}
 		int r2 = Integer.MAX_VALUE, r3 = Integer.MAX_VALUE;
 		int r1 = 1 + solution1(n - 1); // 메소드 안에서 다시 호출되는 것이기 때문에 +1
-		if (n % 3 == 0)
+		if (n % 3 == 0) {
 			r3 = 1 + solution1(n / 3);
-		if (n % 2 == 0)
+		}
+		if (n % 2 == 0) {
 			r2 = 1 + solution1(n / 2);
+		}
 		return Math.min(r1, Math.min(r2, r3));
 	}
 
@@ -33,33 +36,21 @@ public class B1463 {
 	static int[] DP;
 
 	public static int solution2(int n) {
-		if (n == 1)
+		if (n == 1) {
 			return 0;
-		if (DP[n] > 0)
+		}
+		if (DP[n] > 0) {
 			return DP[n];
+		}
 		int r2 = Integer.MAX_VALUE, r3 = Integer.MAX_VALUE;
 		int r1 = 1 + solution2(n - 1);
-		if (n % 3 == 0)
+		if (n % 3 == 0) {
 			r3 = 1 + solution2(n / 3);
-		if (n % 2 == 0)
-			r2 = 1 + solution2(n / 2);
-		return DP[n] = Math.min(r1, Math.min(r2, r3));
-	}
-
-	// 반복문으로 구현 
-	public static int solution3(int n) {
-		int[] a = new int[Math.max(4, n + 1)]; // 배열의 최소크기 4, 배열의 마지막 인덱스 X 
-		a[1] = 0;
-		a[2] = 1;
-		a[3] = 1;
-		for (int i = 4; i <= n; ++i) {
-			a[i] = a[i - 1] + 1; // x에서 1을 빼는 것부터 시작했을 때, 연산 횟수
-			if (i % 2 == 0)
-				a[i] = Math.min(a[i], a[i / 2] + 1); // x에서 2를 나누는 것부터 시작했을 때, 연산수
-			if (i % 3 == 0)
-				a[i] = Math.min(a[i], a[i / 3] + 1); // x에서 3을 나누는 것부터 시작했을 때, 연산수
 		}
-		return a[n];
+		if (n % 2 == 0) {
+			r2 = 1 + solution2(n / 2);
+		}
+		return DP[n] = Math.min(r1, Math.min(r2, r3));
 	}
 
 	public static void main(String[] args) {
@@ -70,7 +61,6 @@ public class B1463 {
 		System.out.println("\n\n solution1: " + solution1(n));
 		DP = new int[n + 1];
 		System.out.println("\n solution2: " + solution2(n));
-		System.out.println("\n solution3: " + solution3(n));
 	}
 
 }
