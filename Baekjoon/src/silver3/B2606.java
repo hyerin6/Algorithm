@@ -11,7 +11,6 @@ public class B2606 {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int V = Integer.parseInt(br.readLine()); // 컴퓨터 수 
@@ -19,7 +18,7 @@ public class B2606 {
 
 		ArrayList<Integer>[] list = new ArrayList[V + 1];
 		for (int i = 0; i < V + 1; ++i)
-			list[i] = new ArrayList<Integer>();
+			list[i] = new ArrayList<>();
 
 		for (int i = 0; i < N; ++i) {
 			StringTokenizer t = new StringTokenizer(br.readLine());
