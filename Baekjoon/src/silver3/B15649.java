@@ -14,6 +14,8 @@ public class B15649 {
 	static boolean[] visit;
 	static int[] arr;
 
+	static StringBuilder sb;
+
 	public static void dfs(int N, int M, int depth) {
 		if (depth == M) { // depth가 M이랑 같으면 arr 출력
 			for (int val : arr) {
@@ -43,6 +45,7 @@ public class B15649 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		sb = new StringBuilder();
 
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());

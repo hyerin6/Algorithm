@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class B15650 {
-	
+public class B15652 {
+
+	public static StringBuilder sb = new StringBuilder();
+
 	static int N;
 	static int M;
 	static int[] arr;
@@ -14,15 +16,15 @@ public class B15650 {
 	public static void dfs(int at, int depth) {
 		if (depth == M) {
 			for (int val : arr) {
-				System.out.print(val + " ");
+				sb.append(val + " ");
 			}
-			System.out.println();
+			sb.append("\n");
 			return;
 		}
 
 		for (int i = at; i <= N; i++) {
 			arr[depth] = i;
-			dfs(i + 1, depth + 1);
+			dfs(i, depth + 1);
 		}
 	}
 
@@ -32,8 +34,11 @@ public class B15650 {
 
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
+
 		arr = new int[M];
 
 		dfs(1, 0);
+		System.out.println(sb.toString());
+
 	}
 }

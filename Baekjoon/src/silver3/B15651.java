@@ -5,35 +5,41 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class B15650 {
-	
-	static int N;
-	static int M;
-	static int[] arr;
+public class B15651 {
 
-	public static void dfs(int at, int depth) {
+	public static int[] arr;
+	public static int N, M;
+	public static StringBuilder sb = new StringBuilder();
+
+	public static void dfs(int depth) {
 		if (depth == M) {
-			for (int val : arr) {
-				System.out.print(val + " ");
+			for (int i = 0; i < M; i++) {
+				sb.append(arr[i] + " ");
 			}
-			System.out.println();
+			sb.append('\n');
 			return;
 		}
 
-		for (int i = at; i <= N; i++) {
+		for (int i = 1; i <= N; ++i) {
 			arr[depth] = i;
-			dfs(i + 1, depth + 1);
+			dfs(depth + 1);
 		}
 	}
 
+	/*
+	 * input: N M
+	 * N까지 출력한다. M 자리 수로
+	 */
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
+
 		arr = new int[M];
 
-		dfs(1, 0);
+		dfs(0);
+		System.out.print(sb.toString());
 	}
 }
