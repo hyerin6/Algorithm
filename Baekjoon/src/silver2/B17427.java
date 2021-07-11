@@ -10,14 +10,15 @@ public class B17427 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int n = Integer.parseInt(br.readLine());
-		long answer = 0; //
+		long answer = 0;
 
 		/*
-		n/i 는 약수에 몇번 포함되는지를 의미
-		i 숫자가 n/i 만큼 포함되기 때문에 곱해서 더해준다.
+		n 이하인 수들 중에서 i를 약수로 갖는 수
+		=> n 이하의 i의 배수
+		=> 개수를 구하려면 n/i 이다.
 		*/
 		for (int i = 1; i <= n; ++i) {
-			answer += i * (n / i);
+			answer += i * (n / i); // i를 약수로 갖는 수가 n/i 만큼 있다.
 		}
 
 		System.out.println(answer);

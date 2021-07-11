@@ -19,7 +19,7 @@ public class B1978 {
 
 		for (int i = 2; (i * i) <= n; ++i) {
 			if (prime[i]) {
-				for (int j = i * 2; j <= n; j += i) {
+				for (int j = i * i; j <= n; j += i) {
 					prime[j] = false;
 				}
 			}
@@ -27,15 +27,15 @@ public class B1978 {
 
 		ArrayList<Integer> result = new ArrayList<>();
 		for (int i = 2; i <= n; ++i) {
-			if (prime[i])
+			if (prime[i]) {
 				result.add(i);
+			}
 		}
 
 		return result;
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
@@ -52,8 +52,9 @@ public class B1978 {
 
 		int cnt = 0;
 		for (int i : a) {
-			if (Collections.binarySearch(primeNumbers, i) >= 0)
+			if (Collections.binarySearch(primeNumbers, i) >= 0) {
 				cnt++;
+			}
 		}
 
 		System.out.println(cnt);
