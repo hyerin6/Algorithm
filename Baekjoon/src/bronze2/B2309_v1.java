@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class B2309 {
+public class B2309_v1 {
 	static boolean flag;
 
 	public static void comb(int[] arr, boolean[] visited, int depth, int r, int sum) {
