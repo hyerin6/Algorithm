@@ -4,25 +4,25 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Node {
-	private int x;
-	private int y;
-
-	public Node(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
-
-	public int getX() {
-		return this.x;
-	}
-
-	public int getY() {
-		return this.y;
-	}
-}
-
 public class 미로탈출 {
+
+	static class Node {
+		private int x;
+		private int y;
+
+		public Node(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		public int getX() {
+			return this.x;
+		}
+
+		public int getY() {
+			return this.y;
+		}
+	}
 
 	public static int n, m;
 	public static int[][] graph = new int[201][201];
