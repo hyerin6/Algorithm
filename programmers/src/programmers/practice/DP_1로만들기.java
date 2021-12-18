@@ -1,6 +1,6 @@
 package programmers.practice;
 
-public class dp_1로만들기 {
+public class DP_1로만들기 {
 	private static void solution(int x) {
 		int[] dp = new int[x + 1];
 		for (int i = 2; i < x + 1; ++i) {
