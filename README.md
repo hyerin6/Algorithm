@@ -1,4 +1,11 @@
-# algorithm          
+# algorithm    
+
+### baekjoon profile 
++ <https://solved.ac/profile/hyerin0611>
+        
+### blog
++ <https://blog.naver.com/hyerin_0611>  
++ <https://hyerin6.github.io/category/algorithm/>    
 
 ### language           
 - Java          
@@ -22,11 +29,3 @@
 - [gold5](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/gold5)               
 - [platinum4](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/platinum4)          
 - [platinum5](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/platinum5)                
-
-### 참고    
-* baekjoon profile 
-  + <https://solved.ac/profile/hyerin0611>
-        
-* 알고리즘 블로그 포스팅 
-  + <https://blog.naver.com/hyerin_0611>  
-  + <https://hyerin6.github.io/category/algorithm/>    
