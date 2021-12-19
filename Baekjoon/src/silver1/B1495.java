@@ -1,57 +1,64 @@
 package silver1;
 
 import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.OutputStreamWriter;
 
 public class B1495 {
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static int n, s, m, vol[], dp[][];
 
-		String[] inputs = br.readLine().split(" ");
-		int N = Integer.parseInt(inputs[0]);
-		int S = Integer.parseInt(inputs[1]);
-		int M = Integer.parseInt(inputs[2]);
-		int[] diff = new int[N + 1];
-		inputs = br.readLine().split(" ");
-		for (int i = 1; i <= N; i++) {
-			diff[i] = Integer.parseInt(inputs[i - 1]);
-		}
+	public static void main(String[] args) throws Exception {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		int[] volume = new int[M + 1];
-		for (int i = 0; i <= M; i++) { // initialize : 0은 S의 초기값이기 때문에 -1로 초기화 시킨 후 진행
-			volume[i] = -1;
-		}
-		volume[S] = 0;
+		String line[] = in.readLine().split(" ");
+		n = Integer.parseInt(line[0]);
+		s = Integer.parseInt(line[1]);
+		m = Integer.parseInt(line[2]);
+		vol = new int[n];
+		dp = new int[n][m + 1];
 
-		List<Integer> list = new ArrayList<>();
+		line = in.readLine().split(" ");
+		for (int i = 0; i < n; i++)
+			vol[i] = Integer.parseInt(line[i]);
 
-		for (int i = 1; i <= N; i++) {
-			list.clear();
-			for (int j = 0; j <= M; j++) {
-				if (volume[j] == i - 1) {
-					if (0 <= j - diff[i] && j - diff[i] <= M) {
-						list.add(j - diff[i]);
-					}
-					if (0 <= j + diff[i] && j + diff[i] <= M) {
-						list.add(j + diff[i]);
-					}
+		//첫번째 곡은 초기 볼륨을 이용해 먼저 계산
+		if (s + vol[0] <= m)
+			dp[0][s + vol[0]] = 1;
+		if (s - vol[0] >= 0)
+			dp[0][s - vol[0]] = 1;
+
+		//두번째 곡부터 계산
+		for (int i = 1; i < n; i++)
+			calc(i);
+
+		out.write(getMaxVol() + "");
+		out.close();
+		in.close();
+	}
+
+	//dp[cur][0~M]을 계산함
+	private static void calc(int cur) {
+		int i, changeVol = vol[cur], prev = cur - 1;
+		for (i = 0; i <= m; i++) {
+			if (dp[prev][i] == 1) {
+				if (i + changeVol <= m) {
+					dp[cur][i + changeVol] = 1;
+				}
+				if (i - changeVol >= 0) {
+					dp[cur][i - changeVol] = 1;
 				}
 			}
-			for (int v : list) {
-				volume[v] = i;
-			}
 		}
+	}
 
-		for (int i = M; i >= 0; i--) {
-			if (volume[i] == N) {
-				System.out.println(i);
-				return;
+	private static int getMaxVol() {
+		for (int i = m; i >= 0; i--) {
+			if (dp[n - 1][i] == 1) {
+				return i;
 			}
 		}
-		
-		System.out.println(-1);
+		return -1; //전부 0이면 -1리턴
 	}
 }

@@ -23,11 +23,12 @@ public class B1890 {
 			}
 		}
 
+		// dp [i][j] = 이 칸 까지 올 수 있는 경우의 수
 		dp[0][0] = 1;
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
-				if (i == N - 1 && j == N - 1) {
-					continue;
+		for (int i = 0; i < N; ++i) {
+			for (int j = 0; j < N; ++j) {
+				if (i == N - 1 && j == N - 1) { // 종착점
+					break;
 				}
 				int next = map[i][j];
 				if (i + next < N) {
