@@ -1,14 +1,16 @@
 package lesson2;
+
 import java.util.Arrays;
+
 public class CyclicRotation {
 
-	static int[] solution (int [] A, int K) {
+	static int[] solution(int[] A, int K) {
 		// 배열 A의 길이가 0이면 반복문 실행하지 않음
-		while(K > 0 && A.length != 0) {
-			int index = A.length-1;
-			int temp = A[A.length-1];
+		while (K > 0 && A.length != 0) {
+			int index = A.length - 1;
+			int temp = A[A.length - 1];
 
-			for(int i = A.length-2; i >= 0; --i) {
+			for (int i = A.length - 2; i >= 0; --i) {
 				A[index] = A[i];
 				--index;
 			}
