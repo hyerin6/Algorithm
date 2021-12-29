@@ -12,7 +12,14 @@
 
 ### programmers              
 - [lv1](https://github.com/hyerin6/Algorithm/tree/master/programmers/src/programmers/lv1)        
-- [lv2](https://github.com/hyerin6/Algorithm/tree/master/programmers/src/programmers/lv2)         
+- [lv2](https://github.com/hyerin6/Algorithm/tree/master/programmers/src/programmers/lv2)    
+
+## codility  
+* [Lesson1](https://github.com/hyerin6/Algorithm/tree/master/Codility/src/lesson1)
+* [Lesson2](https://github.com/hyerin6/Algorithm/tree/master/Codility/src/lesso2)
+* [Lesson3](https://github.com/hyerin6/Algorithm/tree/master/Codility/src/lesson3)
+* [Lesson4](https://github.com/hyerin6/Algorithm/tree/master/Codility/src/lesson4)
+* [Lesson5](https://github.com/hyerin6/Algorithm/tree/master/Codility/src/lesson5)
 
 ### baekjoon         
 - [bronze1](https://github.com/hyerin6/Algorithm/tree/master/Baekjoon/src/bronze1)              
