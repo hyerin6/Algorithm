@@ -1,4 +1,4 @@
-package programmers.practice;
+package com.java.coding;
 
 public class 숫자1이될때까지 {
 	public static void main(String[] args) {

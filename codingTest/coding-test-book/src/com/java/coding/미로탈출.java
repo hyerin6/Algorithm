@@ -1,4 +1,4 @@
-package programmers.practice;
+package com.java.coding;
 
 import java.util.LinkedList;
 import java.util.Queue;

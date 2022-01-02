@@ -1,4 +1,4 @@
-package programmers.practice;
+package com.java.coding;
 
 public class 숫자카드게임 {
 	public static void main(String[] args) {

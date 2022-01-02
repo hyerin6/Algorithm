@@ -1,4 +1,4 @@
-package programmers.practice;
+package com.java.coding;
 
 public class DP_1로만들기 {
 	private static void solution(int x) {

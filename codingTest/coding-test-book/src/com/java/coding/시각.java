@@ -1,4 +1,4 @@
-package programmers.practice;
+package com.java.coding;
 
 /*
 이 유형은 완전 탐색 유형으로 분류된다.
