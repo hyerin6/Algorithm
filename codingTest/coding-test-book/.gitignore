@@ -75,4 +75,6 @@ local.properties
 
 .DS_Store
 
+out/
+
 # End of https://www.gitignore.io/api/eclipse
