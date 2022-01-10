@@ -8,61 +8,98 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class B14891 {
-	static int n, w, L;
-	static int[] truck;
-	static int[] bridge;
 
-	private static int solution() {
-		int time = 0;
-		int idx = 0;
-		int weight = 0;
+	static final int x = 8;
+	static final int y = 4;
 
-		while (idx < n) {
-			// 트럭 한칸씩 이동
-			int reach = bridge[0];
-			for (int i = 1; i < w; ++i) {
-				bridge[i - 1] = bridge[i];
+	static int[][] wheel = new int[y][x];
+	static int[][] turn;
+	static int k;
+
+	private static void solution(int currentWheel, int dir) {
+		leftTurnCheck(currentWheel - 1, -dir);
+		rightTurnCheck(currentWheel + 1, -dir);
+		rotate(currentWheel, dir);
+	}
+
+	private static void rotate(int idx, int dir) {
+		if (dir == 1) {
+			int temp = wheel[idx][7];
+			for (int i = 7; i > 0; --i) {
+				wheel[idx][i] = wheel[idx][i - 1];
 			}
-			bridge[w - 1] = 0;
-
-			// 다리를 건넌 트럭이 있다면 무게 재설정
-			if (reach != 0) {
-				weight -= reach;
+			wheel[idx][0] = temp;
+		} else {
+			int temp = wheel[idx][0];
+			for (int i = 0; i < 7; ++i) {
+				wheel[idx][i] = wheel[idx][i + 1];
 			}
-
-			// 다리에 대기중인 트럭이 올라올 수 있으면 다리에 올라간다.
-			if (idx < n && weight + truck[idx] <= L) {
-				bridge[w - 1] = truck[idx];
-				weight += truck[idx];
-				idx++;
-			}
-
-			time++;
+			wheel[idx][7] = temp;
 		}
+	}
 
-		// 마지막에 다리에 오른 트럭이 다리를 건너는 시간을 추가
-		return time + w;
+	// 왼쪽 바퀴 회전 여부 체크
+	private static void leftTurnCheck(int currentWheel, int dir) {
+		if (currentWheel < 0) {
+			return;
+		}
+		if (wheel[currentWheel][2] != wheel[currentWheel + 1][6]) {
+			leftTurnCheck(currentWheel - 1, -dir);
+			rotate(currentWheel, dir);
+		}
+	}
+
+	// 오른쪽 바퀴 회전 여부 체크
+	private static void rightTurnCheck(int currentWheel, int dir) {
+		if (currentWheel > 3) {
+			return;
+		}
+		if (wheel[currentWheel][6] != wheel[currentWheel - 1][2]) {
+			rightTurnCheck(currentWheel + 1, -dir);
+			rotate(currentWheel, dir);
+		}
 	}
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		n = Integer.parseInt(st.nextToken());
-		w = Integer.parseInt(st.nextToken());
-		L = Integer.parseInt(st.nextToken());
-		truck = new int[n];
-		bridge = new int[w];
-
-		String[] input = br.readLine().split(" ");
-		for (int i = 0; i < n; ++i) {
-			truck[i] = Integer.parseInt(input[i]);
+		for (int i = 0; i < y; ++i) {
+			String input = br.readLine();
+			for (int j = 0; j < x; ++j) {
+				wheel[i][j] = input.charAt(j) - '0';
+			}
 		}
 
-		int answer = solution();
-		System.out.println(answer);
+		k = Integer.parseInt(br.readLine());
+		turn = new int[k][2];
+
+		for (int i = 0; i < k; ++i) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			turn[i][0] = Integer.parseInt(st.nextToken());
+			turn[i][1] = Integer.parseInt(st.nextToken());
+		}
+
+		for (int i = 0; i < k; ++i) {
+			solution(turn[i][0] - 1, turn[i][1]);
+		}
+
+		int total = 0;
+		if (wheel[0][0] == 1) {
+			total += 1;
+		}
+		if (wheel[1][0] == 1) {
+			total += 2;
+		}
+		if (wheel[2][0] == 1) {
+			total += 4;
+		}
+		if (wheel[3][0] == 1) {
+			total += 8;
+		}
+
+		bw.write(total + "\n");
+		bw.close();
+		br.close();
 	}
-
 }
-
