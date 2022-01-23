@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class 가사검색 {
+public class 가사검색_trie_v1 {
 
 	public static int[] solution(String[] words, String[] queries) {
 		Trie[] tries = new Trie[100001];
@@ -75,10 +75,12 @@ public class 가사검색 {
 		private int getCountFromFront(String query) {
 			Node node = front;
 			for (int i = 0; i < query.length(); ++i) {
-				if (query.charAt(i) == '?')
+				if (query.charAt(i) == '?') {
 					break;
-				if (!node.children.containsKey(query.charAt(i)))
+				}
+				if (!node.children.containsKey(query.charAt(i))) {
 					return 0;
+				}
 				node = node.children.get(query.charAt(i));
 			}
 			return node.count;
@@ -87,10 +89,12 @@ public class 가사검색 {
 		private int getCountFromBack(String query) {
 			Node node = back;
 			for (int i = query.length() - 1; i >= 0; --i) {
-				if (query.charAt(i) == '?')
+				if (query.charAt(i) == '?') {
 					break;
-				if (!node.children.containsKey(query.charAt(i)))
+				}
+				if (!node.children.containsKey(query.charAt(i))) {
 					return 0;
+				}
 				node = node.children.get(query.charAt(i));
 			}
 			return node.count;
